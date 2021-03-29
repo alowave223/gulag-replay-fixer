@@ -1,13 +1,18 @@
 #!/usr/bin/python3.9
 # -*- coding: utf-8 -*-
+
 import gb
 from utils import build_replay, get_score
 import asyncio
 import os
 import time
+import sys
 
 def main():
     f = []
+    if not gb.cfg.replay_path.exists():
+        raise RuntimeError(f'Directory \'{gb.cfg.replay_path}\' is invalid!')
+
     for (_, _, filenames) in os.walk(gb.cfg.replay_path):
         f.extend(filenames)
         break

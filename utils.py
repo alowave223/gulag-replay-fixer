@@ -109,7 +109,7 @@ async def get_score(sid: int) -> Optional[Score]:
     [sid], _dict=False)) is not None:
         score = Score.from_sql(score)
     elif (score := await db.fetch('SELECT scores_ap.*, users.name FROM scores_ap LEFT JOIN users ON scores_ap.userid = users.id WHERE scores_ap.id = %s',
-    [sid],_dict=False)) is not None:
+    [sid], _dict=False)) is not None:
         score = Score.from_sql(score)
     else:
         await db.close()
