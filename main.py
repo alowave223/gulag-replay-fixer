@@ -6,6 +6,7 @@ from utils import build_replay, get_score
 import asyncio
 import time
 import sys
+import os
 
 def main():
     f = []
