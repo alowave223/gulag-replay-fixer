@@ -4,7 +4,6 @@
 import gb
 from utils import build_replay, get_score
 import asyncio
-import os
 import time
 import sys
 
